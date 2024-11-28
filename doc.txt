@@ -1,0 +1,121 @@
+<script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js”></script>
+https://codepen.io/chriscoyier/pen/PbOEqL  
+
+
+
+Step 1
+- search keyword "jwt auth docs"
+URL : https://jwt-auth.readthedocs.io/en/develop/
+
+install packagist 
+composer require tymon/jwt-auth  || composer require tymon/jwt-auth --ignore-platform-reqs
+
+--ignore-platform-reqs
+
+'providers' => [
+
+    ...
+
+    Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+]
+
+insert to provider
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"   for create config/jwt.php
+
+insert to Aliases
+'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+'JWTAuthFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+
+php artisan jwt:secret
+
+
+how to use
+https://jwt-auth.readthedocs.io/en/develop/quick-start/
+
+go to model :: user.php
+
+go to config :: auth.php 
+
+'defaults' => [
+    // 'guard' => 'web',
+    'guard' => 'api',
+    'passwords' => 'users',
+],
+
+'guards' => [
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
+    ],
+    'api' => [
+        'driver' => 'jwt',
+        'provider' => 'users',
+        'hash' => false,
+    ],
+],
+
+php artisan config:cache
+php artisan config:clear &&  composer dump-autoload -o
+
+php artisan config:cache php artisan config:clear composer dump-autoload
+composer dump-autoload
+
+##Try installing Passport with all dependencies
+composer require laravel/passport -W
+
+composer require "laravel/passport:^9.0"
+
+
+
+export MAMP_PHP=/Applications/MAMP/bin/php/php8.0.8/bin
+export PATH="$MAMP_PHP:$PATH"
+
+
+
+# install vue/cli 
+npm i -g @vue/cli
+# create project
+vue create -project_name-
+
+# install step 
+- Manually select features  
+
+pages_manage_metadata, pages_read_engagement, และ pages_manage_engagement.
+
+App ID : 438372735765726
+
+App Secret : a29eefb398722abd89a2fbae55163af4
+
+8967327839979630_1059527485872724/comments
+
+Access Token : EAAGOspsxzN4BO90yY8BkgeWdEuBritMLlSNmPhbhRjQSU51nqn6Erm50EGCjEe1R1QeSJM6K4Y9eX1Uqyo7xJuYwl6YqOGbWS75hwBZAZA0soUoFW2AzHnIw2zT0z6o4IpDQtLoaYjnHipDCfsxBCagkel1ZCWbKYjDWYJhVxn5aJGmcp7BrN6htahD0JG7jDAoWCAZC0rBclcHqJdw7QaH3iV0ZD
+
+EAAGOspsxzN4BO2ZCKbt7hMDSIwuWUle9G6i2QZALeGvnnAcGnXsEia0p852yuGE58WK3AQJLvseQMfzcRlUE6d61FUpSJPiWZCGPRb3ovj97K20o7D1ZBwIxgReZCClOY1LMf3Gcs1rlvWbaIinBmAXZBkvZBr0GGOiKlTHJp47ZCvRfMyjp9muuAGuG0R9yDYmbiPUPtPKWJcWgRfteeV6hOMUs8gYZD
+
+EAAGOspsxzN4BO7eoKZA9Tbj4k3xD9s2ZBN5ATOlK9qXLZBiQ2q5ScJVSrQAraOKhidewBpZCmKMTmZAqNifYMMKGYeijB5KYimgkAHaxigdKq0Vma0kk93I59gPyjhiDxIBvfnWO7iYZBeJnY2H5T9I2Dckrid0huQ2uo6mYq8WdKDmzKJCordG3emC1nHSHqc8ZCupmUFigZAsqBGfTlgZDZD
+
+EAAGOspsxzN4BO4wQYqMgeGdIpSl6ZBemZCFGCB23thzJSeoYHaGLpVyijYBUxd98qGPFi2qajmMKvbiIaHLHUGov9t5MXSz8nkVzPWY0DxRlCk9Mc5AIdZBe0NQGY7zGkhuOEmxk7j0YhZCkpatPTxKl3RZCOtYJdxodR5EBBJRo5IRz7Cgd46WmoJzEdSwrQYs2bjCaZCK1YgSs7IyAZDZD
+
+EAAGOspsxzN4BOZC3PAEtXYDgXrolpLiC9KtLMFSHzghlGNbZBGHm7lruoldj2U6qjL8yKq9fODojFeoZCYcCZAY8PFLxG7g9fzZCxTHqDP2ZA95764ZBi3QZA3w4xKnyHpD6Fj7snao7VPquLFeZBZACLLKaZCrkMf61o1IONQsORdnKZB8JZBDP4QkFYr2HJ
+
+8967327839979630_1059527485872724/comments?fields=name,description,full_picture,type,message
+
+Post Id : 8967327839979630_1059527485872724
+Post Id : 8967327839979630_1054532189705587
+
+
+https://www.facebook.com/fashionchills/posts/pfbid02Fqc3dWzdsNLMJhb4ecut8h9pF3HjvooWtXuAb8ekjLn7GnZksSh2xbW2ciYFdkG1l?__cft__[0]=AZW5jWUpEAtKRwsPhFw104SK9dh1Ul1xiBsVKUZuZBIFqv-wCCxziPptdng6qmQKHAID_BM5_-44ufwIBJ5JHIhGzn2tuouuuqDHe-FlN50aJZXPtHglve14823rmKUgBHp7uyXnxHOdksL95Tr4yQVkASWiquh92kMoj3frdUiTXEAJryO3aVCK_PajgHLbjk8&__tn__=%2CO%2CP-R
+
+https://graph.facebook.com/v21.0/8967327839979630/?access_token=EAAGOspsxzN4BO4iPsJSrQTzefbdf8dU2epXSZB1T356XyCsjLOlZCJwUKqrPj4GvZCdR3F9cPVHbqZC5rxM8WKmZB2NftApJZBZCJsqAWl76k3i1uHlbK0uHT9UmnqiEKZCnZBXaa4AVee6NLXK2QR2D4p4DuGDaYDATEqRZAlxBsBgdKZBxT4BjwaVV3jweSAmoIhILRghkFUcBJQVvZBZCU60taK2pY
+curl -i -X GET \
+ "https://graph.facebook.com/v21.0/8967327839979630_1059527485872724/comments?access_token=EAAGOspsxzN4BO4wQYqMgeGdIpSl6ZBemZCFGCB23thzJSeoYHaGLpVyijYBUxd98qGPFi2qajmMKvbiIaHLHUGov9t5MXSz8nkVzPWY0DxRlCk9Mc5AIdZBe0NQGY7zGkhuOEmxk7j0YhZCkpatPTxKl3RZCOtYJdxodR5EBBJRo5IRz7Cgd46WmoJzEdSwrQYs2bjCaZCK1YgSs7IyAZDZD"
+
+
+pages_show_list
+pages_messaging
+pages_read_engagement
+pages_manage_metadata
+pages_read_user_content
+pages_manage_posts
+pages_manage_engagement
+
